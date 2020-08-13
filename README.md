@@ -31,7 +31,7 @@ is a change.  There is no need to upload every night if nothing has changed.
 
 (https://docs.microsoft.com/en-us/schooldatasync/install-the-school-data-sync-toolkit#BK_ConfigureAutomated)
 
-Add-CsvFileSyncTask -CSVFolderPath C:\Scripts\vc-msteams\csv -ProfileName CSV -LogPath C:\Logs\vc-msteams -UserName user@domain.org -Validate -RedirectOutput
+Add-CsvFileSyncTask -CSVFolderPath C:\Scripts\vc-msteams\csv -ProfileName CSV -LogPath C:\Logs\vc-msteams -UserName user@domain.org -StoreCredentials
 
 ### Step 4
 Create a scheduled task in Windows to Run python export.py at your own frequency.
