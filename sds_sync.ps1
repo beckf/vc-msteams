@@ -1,0 +1,1 @@
+Send-CsvFiles -profileName 'CSV' -userName 'username@domain.org' -csvFolderPath 'C:\Scripts\vc-msteams\csv' -logPath 'C:\Logs\SDS' -useStoredCredentials -redirectOutput
