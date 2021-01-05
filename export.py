@@ -74,8 +74,8 @@ def log(data):
     """
     if not os.path.exists(config.config["logdir"]):
         os.makedirs(config.config["logdir"])
-    logging.basicConfig(filename=logfile, level=logging.DEBUG)
-    logging.debug(data)
+    logging.basicConfig(filename=logfile, level=logging.INFO)
+    logging.info(data)
     print(data)
 
 
