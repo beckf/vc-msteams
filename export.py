@@ -263,7 +263,14 @@ if current_csv_total_length != previous_csv_total_length:
                                                                               current_csv_total_length)
     if file_diff > .5:
         log("Diff between previous and current less than 50%. Safe to sync.")
-        check_output("C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe .\\sds_sync.ps1", shell=True)
+        try:
+            check_output("C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe .\\sds_sync.ps1", shell=True)
+        except:
+            mailer.send_mail_notification(send_from=config.config["mail_from"],
+                                          send_to=config.config["mail_to"],
+                                          subject="VC-MSTeams SDS Sync Failed",
+                                          text="SDS Sync Failed. Check SDS Settings and/or login credentials.",
+                                          server=config.config["smtp_server"])
 
         with open(logfile, 'r') as file:
             message_text = file.read()
